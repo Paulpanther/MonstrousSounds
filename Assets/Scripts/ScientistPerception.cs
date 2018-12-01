@@ -18,7 +18,7 @@ public class ScientistPerception : MonoBehaviour {
         {
             if (PlayerInLineOfSight())
             {
-
+                Debug.Log("Monster spotted at time: " + Time.time);
             }
         }
 	}
@@ -43,9 +43,10 @@ public class ScientistPerception : MonoBehaviour {
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("Player")){
-                Debug.Log("Monster spotted at time: " + Time.time);
+                return true;
+                
             }
         }
-        return true;
+        return false;
     }
 }
