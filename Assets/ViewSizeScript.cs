@@ -23,11 +23,20 @@ public class ViewSizeScript : MonoBehaviour {
         currentScale = standingScaleFactor;
     }
 	
-    public static void setToScreaming()
+    public static void setToScreaming(Vector3 position)
     {
         if (screamStart == 0 || screamStart +  screamDuration + screamCooldownSeconds < Time.time) {
             currentAction = Action.Screaming;
             screamStart = Time.time;
+            Collider2D[] hits = Physics2D.OverlapCircleAll(position, 7);
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.CompareTag("Scientist"))//make sure that the scientist has a collider
+                {
+                    Debug.Log("A Scientist heard that...");
+                    hit.GetComponent<ScientistMovement>().hearScream(position);
+                }
+            }
         }
     }
 
