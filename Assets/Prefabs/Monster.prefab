@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 0.1
+  screamHearDistance: 7
 --- !u!114 &114301830265327480
 MonoBehaviour:
   m_ObjectHideFlags: 1

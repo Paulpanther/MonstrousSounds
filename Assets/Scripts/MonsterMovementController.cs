@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonsterMovementController : MonoBehaviour {
 
     public float playerSpeed = 10;
+    public float screamHearDistance;
 
     void Update()
     {
@@ -12,6 +13,15 @@ public class MonsterMovementController : MonoBehaviour {
         if (isSpacePressed)
         {
             ViewSizeScript.setToScreaming();
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, screamHearDistance);
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.CompareTag("Scientist"))
+                {
+                    Debug.Log("A Scientist heard that...");
+                    //hit.GetComponent<INSERTSCRIPTNAMEHERE>().INSERTMETHODNAMEHERE(transform.position);
+                }
+            }
         }
     }
 
