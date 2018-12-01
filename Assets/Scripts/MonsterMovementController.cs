@@ -16,7 +16,7 @@ public class MonsterMovementController : MonoBehaviour {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, screamHearDistance);
             foreach (Collider2D hit in hits)
             {
-                if (hit.CompareTag("Scientist"))
+                if (hit.CompareTag("Scientist"))//make sure that the scientist has a collider
                 {
                     Debug.Log("A Scientist heard that...");
                     //hit.GetComponent<INSERTSCRIPTNAMEHERE>().INSERTMETHODNAMEHERE(transform.position);
