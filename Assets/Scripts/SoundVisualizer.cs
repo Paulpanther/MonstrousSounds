@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundVisualizer : MonoBehaviour {
 
     public GameObject vision_pf;
-
+    public GameObject soundWaves_pf;
 
 
 	void Start () {
@@ -14,10 +14,11 @@ public class SoundVisualizer : MonoBehaviour {
 	
 
 	void Update () {
-		/*if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            CreateVision(new Vector3(0,0,0));
-        }*/
+            CreateSoundWaves(new Vector3(0,0,0));
+        }
+        
 	}
 
 
@@ -26,5 +27,12 @@ public class SoundVisualizer : MonoBehaviour {
     {
         position += -(transform.forward) * 0.1f;
         Instantiate(vision_pf, position, Quaternion.identity);
+    }
+
+    public void CreateSoundWaves(Vector3 position)
+    {
+        position += -(transform.forward) * 0.3f;
+        Instantiate(soundWaves_pf, position, Quaternion.identity);
+        //you may take a reference to the object and edit the particlesystem based on some extra parameters...
     }
 }
