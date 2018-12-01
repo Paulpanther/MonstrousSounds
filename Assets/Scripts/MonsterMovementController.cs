@@ -19,7 +19,7 @@ public class MonsterMovementController : MonoBehaviour {
                 if (hit.CompareTag("Scientist"))//make sure that the scientist has a collider
                 {
                     Debug.Log("A Scientist heard that...");
-                    //hit.GetComponent<INSERTSCRIPTNAMEHERE>().INSERTMETHODNAMEHERE(transform.position);
+                    hit.GetComponent<ScientistMovement>().hearScream(transform.position);
                 }
             }
         }

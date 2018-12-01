@@ -7,7 +7,7 @@ public class ViewSizeScript : MonoBehaviour {
 
     private static float screamStart = 0;
     public static int screamDuration = 4;
-    public static int screamCooldownSeconds = 8;
+    public static int screamCooldownSeconds = 6;
     public float transitionStep = .05f;
     private static float standingScaleFactor = 0.4f;
     private static float walkingScaleFactor = 0.6f;
@@ -25,7 +25,7 @@ public class ViewSizeScript : MonoBehaviour {
 	
     public static void setToScreaming()
     {
-        if (screamStart == 0 || screamStart +  screamDuration < Time.time) {
+        if (screamStart == 0 || screamStart +  screamDuration + screamCooldownSeconds < Time.time) {
             currentAction = Action.Screaming;
             screamStart = Time.time;
         }

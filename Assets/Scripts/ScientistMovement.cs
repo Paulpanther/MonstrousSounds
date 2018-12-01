@@ -40,6 +40,12 @@ public class ScientistMovement : MonoBehaviour
         }
     }
 
+    public void hearScream(Vector3 position)
+    {
+        path = null;
+        seeker.StartPath(transform.position, position, OnPathComplete);
+    }
+
     public void Update()
     {
         if (path == null)
