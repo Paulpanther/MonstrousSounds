@@ -6,24 +6,26 @@ public class ViewSizeScript : MonoBehaviour {
     private enum Action { Screaming, Standing, Walking};
 
     private static float screamStart = 0;
-    public static float screamBuildUpTime = 0.5f;
-    public static float screamBuildDowntime = 0.75f;
-    public static int screamDuration = 3;
+    public static int screamDuration = 4;
     public static int screamCooldownSeconds = 8;
-    private static Vector2 standingScaleFactor = new Vector3(0.4f, 0.4f, 1);
-    private static Vector2 walkingScaleFactor = new Vector3(0.6f, 0.6f, 1);
-    private static Vector2 screamScaleFactor = new Vector3(1.4f, 1.4f, 1);
+    public float transitionStep = .05f;
+    private static float standingScaleFactor = 0.4f;
+    private static float walkingScaleFactor = 0.6f;
+    private static float screamScaleFactor = 1.4f;
+    private static float currentScale;
+
 
     private static Action currentAction;
 
     // Use this for initialization
     void Start () {
         currentAction = Action.Standing;
+        currentScale = standingScaleFactor;
     }
 	
     public static void setToScreaming()
     {
-        if (screamStart == 0 || screamStart + screamBuildUpTime + screamDuration + screamBuildDowntime + screamCooldownSeconds < Time.time) {
+        if (screamStart == 0 || screamStart +  screamDuration < Time.time) {
             currentAction = Action.Screaming;
             screamStart = Time.time;
         }
@@ -48,24 +50,19 @@ public class ViewSizeScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Debug.Log("screamStart: " + screamStart.ToString() + " currentTime: " + Time.time.ToString());
         switch (currentAction)
         {
             case Action.Screaming:
-               if(screamStart + screamBuildUpTime > Time.time)
+                if (screamStart + screamDuration > Time.time)
                 {
-                    float transitionFactor = (Time.time - screamStart) / screamBuildUpTime;
-                    float currentYXScaleFactor = (screamScaleFactor.x - standingScaleFactor.x) * transitionFactor + standingScaleFactor.x;
-                    transform.localScale = new Vector3(currentYXScaleFactor, currentYXScaleFactor, 1f);
-                }
-                else if(screamStart + screamBuildUpTime + screamDuration > Time.time)
-                {
-                    transform.localScale = screamScaleFactor;
-                }else if(screamStart + screamBuildUpTime + screamDuration + screamBuildDowntime > Time.time)
-                {
-                    float transitionFactor = 1 - ((Time.time - (screamStart + screamBuildUpTime + screamDuration)) / screamBuildDowntime);
-                    float currentYXScaleFactor = (screamScaleFactor.x - standingScaleFactor.x) * transitionFactor + standingScaleFactor.x;
-                    transform.localScale = new Vector3(currentYXScaleFactor, currentYXScaleFactor, 1f);
+                    if(currentScale < screamScaleFactor)
+                    {
+                        currentScale += transitionStep;
+                        if(currentScale > screamScaleFactor)
+                        {
+                            currentScale = screamScaleFactor;
+                        }
+                    }
                 }
                 else
                 {
@@ -73,11 +70,35 @@ public class ViewSizeScript : MonoBehaviour {
                 }
                 break;
             case Action.Walking:
-                transform.localScale = walkingScaleFactor;
+                if (currentScale > walkingScaleFactor)
+                {
+                    currentScale -= transitionStep;
+                    if (currentScale < walkingScaleFactor)
+                    {
+                        currentScale = walkingScaleFactor;
+                    }
+                }
+                else if (currentScale < walkingScaleFactor)
+                {
+                    currentScale += transitionStep;
+                    if (currentScale > walkingScaleFactor)
+                    {
+                        currentScale = walkingScaleFactor;
+                    }
+                }
                 break;
             case Action.Standing:
-                transform.localScale = standingScaleFactor;
+                if (currentScale > standingScaleFactor)
+                {
+                    currentScale -= transitionStep;
+                    if (currentScale < standingScaleFactor)
+                    {
+                        currentScale = standingScaleFactor;
+                    }
+                }
                 break;
         }
-	}
+        transform.localScale = new Vector3(currentScale, currentScale, 1f);
+
+    }
 }
