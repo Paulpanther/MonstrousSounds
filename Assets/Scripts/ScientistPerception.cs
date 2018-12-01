@@ -38,9 +38,9 @@ public class ScientistPerception : MonoBehaviour {
 
     private bool PlayerInLineOfSight()
     {
-        Vector2 pos2d = new Vector2(transform.position.x, transform.position.z);
-        Vector3 vecToPlayer = player.transform.position - new Vector3(transform.position.x, transform.position.z, 0);
-        RaycastHit2D hit = Physics2D.Raycast(pos2d, new Vector2(vecToPlayer.x, vecToPlayer.y), MaxViewDistance);
+        Vector2 pos2d = new Vector2(transform.position.x, transform.position.y);
+        Vector3 vecToPlayer = player.transform.position - new Vector3(transform.position.x, transform.position.y, 0);
+        RaycastHit2D hit = Physics2D.Raycast(pos2d, new Vector2(vecToPlayer.x, vecToPlayer.y), MaxViewDistance, ~(1<<8));//that last one is a layermask causing layer 8 to be ignored
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("Player")){
