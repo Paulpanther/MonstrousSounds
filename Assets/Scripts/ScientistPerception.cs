@@ -18,7 +18,7 @@ public class ScientistPerception : MonoBehaviour {
         {
             if (PlayerInLineOfSight())
             {
-                Debug.Log("Monster spotted at time: " + Time.time);
+                Camera.main.GetComponent<TriggerGameOver>().TriggerGO();
             }
         }
 	}
@@ -38,8 +38,9 @@ public class ScientistPerception : MonoBehaviour {
 
     private bool PlayerInLineOfSight()
     {
-        Vector3 vecToPlayer = player.transform.position - transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), new Vector2(vecToPlayer.x, vecToPlayer.y), MaxViewDistance);
+        Vector2 pos2d = new Vector2(transform.position.x, transform.position.z);
+        Vector3 vecToPlayer = player.transform.position - new Vector3(transform.position.x, transform.position.z, 0);
+        RaycastHit2D hit = Physics2D.Raycast(pos2d, new Vector2(vecToPlayer.x, vecToPlayer.y), MaxViewDistance);
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("Player")){

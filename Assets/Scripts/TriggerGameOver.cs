@@ -13,7 +13,7 @@ public class TriggerGameOver : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void TriggerGO () {
+	public void TriggerGO () {
 		BadNews.enabled = true;
 	}
 }
