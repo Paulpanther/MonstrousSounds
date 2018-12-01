@@ -13,6 +13,7 @@ public class ViewSizeScript : MonoBehaviour {
     private static float walkingScaleFactor = 0.6f;
     private static float screamScaleFactor = 1.4f;
     private static float currentScale;
+    private static AudioSource scream;
 
 
     private static Action currentAction;
@@ -21,12 +22,14 @@ public class ViewSizeScript : MonoBehaviour {
     void Start () {
         currentAction = Action.Standing;
         currentScale = standingScaleFactor;
+        scream = GetComponent<AudioSource>();
     }
 	
     public static void setToScreaming(Vector3 position)
     {
         if (screamStart == 0 || screamStart +  screamDuration + screamCooldownSeconds < Time.time) {
             currentAction = Action.Screaming;
+            scream.Play();
             screamStart = Time.time;
             Collider2D[] hits = Physics2D.OverlapCircleAll(position, 7);
             foreach (Collider2D hit in hits)
