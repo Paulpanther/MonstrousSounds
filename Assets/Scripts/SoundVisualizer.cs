@@ -14,10 +14,6 @@ public class SoundVisualizer : MonoBehaviour {
 	
 
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
-        {
-            CreateSoundWaves(new Vector3(0,0,0));
-        }
         
 	}
 

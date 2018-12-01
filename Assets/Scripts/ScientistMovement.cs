@@ -18,6 +18,8 @@ public class ScientistMovement : MonoBehaviour
     private int currentWaypoint = 0;
     public bool reachedEndOfPath;
     private bool topointA = false;
+    private AudioSource audioSource;
+    public GameObject player;
 
 
     public void Start()
@@ -27,6 +29,7 @@ public class ScientistMovement : MonoBehaviour
         transform.position = pointA.position;
         seeker.StartPath(transform.position, pointB.position, OnPathComplete); //points[destPoint]
 
+        audioSource = GetComponent<AudioSource>();
         SpawnSound();
     }
 
@@ -113,6 +116,10 @@ public class ScientistMovement : MonoBehaviour
 
     private void SpawnSound()
     {
+
+        audioSource.volume = Mathf.Clamp01((10 - (transform.position - player.transform.position).magnitude) / 10);
+        audioSource.Play();
+
         Camera.main.GetComponent<SoundVisualizer>().CreateSoundWaves(transform.position);
 
         Invoke("SpawnSound", 1);

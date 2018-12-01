@@ -209,6 +209,21 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1202325316}
+    - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
+        type: 2}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 2107267605}
+    - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
+        type: 2}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 305148386}
+    - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1202325316}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90affd387d31aa6438b21a4154fb3822, type: 2}
   m_IsPrefabAsset: 0
@@ -2736,90 +2751,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1161286490 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1427268238834262, guid: 90affd387d31aa6438b21a4154fb3822,
-    type: 2}
-  m_PrefabInternal: {fileID: 241170269}
---- !u!114 &1161286494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1161286490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 882733b0b2b74984a997bdfb8753cd7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 2107267605}
-  pointB: {fileID: 305148386}
-  ScientistMoveSpeed: 1
-  speed: 1
-  nextWaypointDistance: 1
-  reachedEndOfPath: 0
---- !u!114 &1161286495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1161286490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask:
-    value: -1
---- !u!50 &1161286496
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1161286490}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &1161286497
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1161286490}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &1202325316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1645128552172684, guid: a6a82d8bcc7def448905add6700ec9e1,
