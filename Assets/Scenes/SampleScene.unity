@@ -154,8 +154,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1645128552172684, guid: a6a82d8bcc7def448905add6700ec9e1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114983535224749852, guid: a6a82d8bcc7def448905add6700ec9e1,
+        type: 2}
+      propertyPath: soundWaves_pf
+      value: 
+      objectReference: {fileID: 1337318189726156, guid: be67c6488115ef542b4d6373678453e3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6a82d8bcc7def448905add6700ec9e1, type: 2}
   m_IsPrefabAsset: 0

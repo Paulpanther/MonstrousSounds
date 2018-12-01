@@ -26,6 +26,8 @@ public class ScientistMovement : MonoBehaviour
         seeker = GetComponent<Seeker>();
         transform.position = pointA.position;
         seeker.StartPath(transform.position, pointB.position, OnPathComplete); //points[destPoint]
+
+        SpawnSound();
     }
 
     public void OnPathComplete(Path p)
@@ -106,4 +108,14 @@ public class ScientistMovement : MonoBehaviour
         // If you are writing a 2D game you may want to remove the CharacterController and instead use e.g transform.Translate
         transform.position += velocity * Time.deltaTime;
     }
+
+
+
+    private void SpawnSound()
+    {
+        Camera.main.GetComponent<SoundVisualizer>().CreateSoundWaves(transform.position);
+
+        Invoke("SpawnSound", 1);
+    }
+
 }
