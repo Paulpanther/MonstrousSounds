@@ -14,7 +14,7 @@ public class ScientistPerception : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (PlayerInFOV())
+        //if (PlayerInFOV())
         {
             if (PlayerInLineOfSight())
             {
@@ -26,7 +26,7 @@ public class ScientistPerception : MonoBehaviour {
     private bool PlayerInFOV()
     {
         Vector3 vecToPlayer = player.transform.position - transform.position;
-        if (Vector3.Angle(vecToPlayer, -transform.up) <= fieldOfView)
+        if (Vector3.Angle(vecToPlayer, transform.up) <= fieldOfView)
         {
             return true;
         } else
