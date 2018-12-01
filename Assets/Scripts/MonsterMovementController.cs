@@ -6,6 +6,15 @@ public class MonsterMovementController : MonoBehaviour {
 
     public float playerSpeed = 10;
 
+    void Update()
+    {
+        bool isSpacePressed = Input.GetButton("Jump");
+        if (isSpacePressed)
+        {
+            ViewSizeScript.setToScreaming();
+        }
+    }
+
     private void FixedUpdate() {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
