@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 82586243177588396}
   - component: {fileID: 114018096571368166}
   - component: {fileID: 114170533342445638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Scientist
   m_TagString: Scientist
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   fieldOfView: 50
-  MaxViewDistance: 10
+  MaxViewDistance: 5
 --- !u!212 &212252076644489652
 SpriteRenderer:
   m_ObjectHideFlags: 1

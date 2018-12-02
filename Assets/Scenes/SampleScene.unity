@@ -204,11 +204,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114401913440928364, guid: 90affd387d31aa6438b21a4154fb3822,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1202325316}
     - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
         type: 2}
       propertyPath: pointA
@@ -220,6 +215,11 @@ Prefab:
       value: 
       objectReference: {fileID: 992522098}
     - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1202325316}
+    - target: {fileID: 114401913440928364, guid: 90affd387d31aa6438b21a4154fb3822,
         type: 2}
       propertyPath: player
       value: 
@@ -270,11 +270,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114401913440928364, guid: 90affd387d31aa6438b21a4154fb3822,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1202325316}
     - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
         type: 2}
       propertyPath: pointA
@@ -286,6 +281,11 @@ Prefab:
       value: 
       objectReference: {fileID: 305148386}
     - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1202325316}
+    - target: {fileID: 114401913440928364, guid: 90affd387d31aa6438b21a4154fb3822,
         type: 2}
       propertyPath: player
       value: 
@@ -676,11 +676,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114401913440928364, guid: 90affd387d31aa6438b21a4154fb3822,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1202325316}
     - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
         type: 2}
       propertyPath: pointA
@@ -692,6 +687,11 @@ Prefab:
       value: 
       objectReference: {fileID: 785169295}
     - target: {fileID: 114018096571368166, guid: 90affd387d31aa6438b21a4154fb3822,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1202325316}
+    - target: {fileID: 114401913440928364, guid: 90affd387d31aa6438b21a4154fb3822,
         type: 2}
       propertyPath: player
       value: 
